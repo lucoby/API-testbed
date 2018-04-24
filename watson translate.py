@@ -1,5 +1,12 @@
 import json
+import configparser
 from watson_developer_cloud import LanguageTranslatorV2
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+USERNAME = config['Bluemix']['user']
+PASSWORD = config['Bluemix']['pass']
 
 language_translator = LanguageTranslatorV2(
     username=USERNAME,
